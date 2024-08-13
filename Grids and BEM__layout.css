@@ -122,7 +122,11 @@
 .lang_leng:hover{
     color: #7E7E82;
 }
-
+.navBrands__but{
+    background: none;
+	border: none;
+   }
+  
 @media (min-width:360px) and (max-width:766px){
     .cont_menu{
         width: 360px;
@@ -188,8 +192,12 @@
     padding-bottom: 24px;
     padding-top: 24px;
 }
-.head__cont_menu:hover{
-    transform: rotate(360deg);
+.close_767{
+    display: flex;
+    align-items: center;
+}
+.icon_aButton:hover{
+    transform: rotate(180deg);
 }
 .light:hover{
     filter: drop-shadow(0 0 0.75rem #4a192c );
@@ -205,10 +213,12 @@
 }
 .main {
     background-color: #F8F8F8;
+}
+.sectionServis{ 
     padding-top: 20px;
 }
 
-.main__servis {
+.sectionServis__h1 {
     padding-left: 12px;
     margin-bottom: 24px;
     color: #1B1C21;
@@ -220,14 +230,14 @@
     background-repeat: no-repeat ;
     
 }
-.main__list-nav {
+.nav__list {
     display: flex;
     padding-left: 0; 
     list-style-type: none;
     margin-bottom: 24px;
    margin-left: 24px;
 }
-.main__list-nav_nav-li {
+.nav__list_li {
     font-size: 16px;
     list-style-type: none;
         padding-left: 16.5px;
@@ -240,7 +250,7 @@
         border-radius: 5px;
         
 }
- .main__list-nav_nav-li:hover {
+ .nav__list_li:hover {
         border: 2px solid #B8FFEC;
         border-radius: 5px;
 }
@@ -251,7 +261,9 @@
 .main__section-container {
     font-family:  'TT Lakes';
     margin-left: 16px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .main__section-text {
     font-family: 'TT Lakes';
@@ -276,10 +288,6 @@
     text-decoration: none;
     color: #1B1C21;
 }
-
-.read-more__read-logo {
-   
-}
 .read-more__a-text {
     margin-left: 16px;
     text-decoration: none;
@@ -287,19 +295,24 @@
     font-size: 16px;
 }
 .main__a-picture{
-    width: 531.35px;
-    height: 307px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
-.main__foto-320 {
-    background-image: url(./img/foto_320.png);
+.main__foto {
+    
     background-repeat: no-repeat;
-    width: 320px;
+    width: 100%;
+    height: auto;
 }
-.main_repear-brand{
+.SectionRepear{
     border-top: 1px solid #D9FFF5;
     background-color: #F8F8F8;
 } 
-.h2_repearBrand{
+.SectionRepear_block{
+    margin-left: 32px;
+}
+.SectionRepear__h2{
     font-family: 'TT Lakes'; 
     line-height: 24px;
     letter-spacing: -0.2px;
@@ -307,22 +320,18 @@
     color: #7E7E82; 
     padding-bottom: 16px;  
 }
-
-.h2_767{
-    display: none;
-}
-
-.repear_block{
+.navBrands{
     display: grid;
-    
-   
     margin-bottom: 16px;
-    padding-right: 32px;
-    
-   
 }
-
-.repear_brand{
+.navBrands__ul{ 
+    display: grid;
+    margin-bottom: 16px;
+    grid-template-columns: repeat(4, auto);;
+    grid-template-rows: repeat(2, auto);
+    padding-left: 0px;
+}
+.navBrands__li{
     display: flex;
     justify-content: space-between;
       border: 1px solid #EAEAEA;
@@ -333,20 +342,18 @@
   }
 
   
-.brands {
+.navBrands__brands{
+    align-items: center;
     margin-left: 16px;
-    
 }
-.a_repear{
-    background-image: url(img/go.svg);
+.navBrands__icon{
     background-repeat: no-repeat;
-    gap: 16px;
     margin-right: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
     cursor: pointer;
 }
-.a_repear:hover{
+.navBrands__icon:hover{
     filter: drop-shadow(0 0 0.75rem #4a192c);
 }
 .show_all{
@@ -363,12 +370,14 @@
     border-top: 1px solid #D9FFF5;
     background-color: #F8F8F8;
 } 
-.hidden{
+.navBrands__widh{
+    display: flex;
+    align-items: center;
+   }
+.navBrands__hidden{
     display: none;
     margin-bottom: 16px;
   }
-  
- 
   .none{
     display: none;
    
@@ -409,12 +418,20 @@
     margin-bottom: 32px;
     cursor: pointer;
   }
-
+  @media (min-width:320px){
+    .main__img{
+        width: 100%;
+        height: auto;
+    }
+   }
 @media (min-width:320px) and (max-width:767px) {
-    .main_repear-brand {
+    .SectionRepear {
         display: none;
     }
-    .repear_block_767{
+    .SectionRepearFor_767{
+        display: none;
+    }
+    .navBrandsFor_767{
         display: none;
     }
     .head__cont_line {
@@ -467,12 +484,17 @@
         align-items: center;
         gap: 16px;
     }
+    .main__section-container{
+        display: block;
+    }
     .main__section-text {
         margin-left: 16px;
     }
     .main__foto-320{
         margin-bottom: 24px;
+       
     }
+    
     .main__foto-picture{
         display: none;
     }
@@ -496,7 +518,7 @@
         margin-left: 16px;
         align-items: center;
       }
-      .a_repear{
+      .navBrands__brands{
         
         margin-right: 16px;
         margin-top: 16px;
@@ -511,10 +533,16 @@
       .close{
         display: none;
       }
+      .SectionRepear__h2{
+        margin-left: 16px;
+      }
 }
 @media (min-width:767px) and (max-width:1119px) {
     .head {
         width: 100%; 
+    }
+    .SectionRepear{
+        display: none;
     }
     .head__cont {
         display: flex;
@@ -574,7 +602,7 @@
     .head__img-checkstatus-1120 {
         display: none;
     }
-    .main__navigation {
+    .nav {
     overflow:scroll;
     }
     .main__nav_otz {
@@ -584,62 +612,55 @@
         display: flex;
         margin-top: 0px;
     }
-    .main__servis{
+    .sectionServis__h1{
         margin-bottom: 32px;
         padding-left: 20px;
     }
     .main__section-text{
-        min-width: 312px;
-        min-height: 160px;
+
         margin-left: 24px;
     }
     .main__section-text_section-p2 {
         display: none;
     }
-    .main__foto-picture {
-        margin-left: 48px;
-        margin-right: 25px;
-        
-    }
-    .main__a-picture{
-       width: 360px;
-       height: 208px;
-       transition-duration: 4s;
-    }
-    .main__foto-320{
-        display: none;
-    }
-    .main__foto-picture{
+    .main__foto{
+        margin-right: 24px;
         margin-bottom: 32px;
+        margin-left: 48px;
     }
-   .repear_block {
-    display: none;
-   }
-   .main_repear-brand {
-    display: none;
-   }
+   
+   
+   
    .main_repear-brand_320{
     display: none;
    }
-   .main_repear-brand_767{
+   .SectionRepearFor_767{
     border-top: 1px solid #D9FFF5;
     background-color: #F8F8F8;
-    margin-left: 24px;
    } 
+   .SectionRepear_block767{
+    margin-left: 24px;
+   }
    .openButton_767{
     margin-bottom: 34px;
     cursor: pointer;
    }
-   .h2_767{
-    font-size: 16px;
-    color: #7E7E82; 
-    padding-bottom: 16px;  
-}
-   .repear_block_767{
-    display: grid;
+   
+   .navBrands{
+      display: none;
+   }
+   .navBrands__ul{
+     display: grid;
     grid-template-columns: repeat(3, auto);;
-    grid-template-rows: repeat(2, auto);;
+    grid-template-rows: repeat(2, auto);
     margin-bottom: 24px;
+   }
+   .navBrands__widh{
+    display: flex;
+    align-items: center;
+   }
+   .navBrands__brands{
+    align-items: center;
    }
    .swiper-container{
     display: none;
@@ -648,11 +669,20 @@
     display: none;
     cursor: pointer;
     margin-bottom: 34px;
+    
    }
-   
+   .SectionRepear__h2{
+    margin-left: 16px;
+   }
+   button{
+    background: none;
+	border: none;
+   }
+  
 }
 
 @media (min-width:1120px) {
+    
     .repear_block_767{
         display: none;
     }
@@ -700,17 +730,21 @@
         float: right;
         padding-right: 32px;
     }
-    .main__servis {
+    .sectionServis__h1 {
         display: inline-block;
         margin-top: 42px;
         padding-left: 30px;
     }
-    
-    .main__list-nav {
+    .main__foto{
+        margin-right: 32px;
+        margin-bottom: 32px;
+        margin-left: 36px;
+    }
+    .nav__list {
         margin-left: 34px;
         justify-content: space-around;
     }
-    .main__list-nav_nav-li{
+    .nav__list_li{
         font-size: 16px;
         margin-bottom: 0px;
     }
@@ -727,25 +761,13 @@
     .main__section-container {
         display: flex;
     }
-    .main__section-text{
-        min-width: 490px; 
-    }
+    
     .main__section-text_section-p1 {
         display: none;
     }
-    .main__foto-picture {
-        background-repeat: no-repeat;
-        margin-left: 36px;
-        margin-right: 29px;
-        padding-bottom: 30px;
-        display: block;
-        
-    }
+   
     .main__a-picture {
         transition-duration: 4s;
-    }
-    .main__foto-320{
-        display: none;
     }
     .head__a-repair-1120 {
         display: inline-flex;
@@ -786,10 +808,19 @@
         grid-template-columns: repeat(4, auto);;
         grid-template-rows: repeat(2, auto);;
     }
-    .h2_767{
+    .SectionRepear__block{
+        margin-left: 34px;
+    }
+    .SectionRepearFor_767{
+        display: none;
+    }
+    .navBrandsFor_767{
         display: none;
     }
     .openButton_767{
+        display: none;
+    }
+    .main_repear-brand_320{
         display: none;
     }
 }
