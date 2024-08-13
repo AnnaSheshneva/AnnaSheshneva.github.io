@@ -12,6 +12,7 @@
  body {
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
  }
  .cont_menu {
     font-family: 'TT Lakes'; 
@@ -212,6 +213,7 @@
     padding-right: 16px;
 }
 .main {
+    width: 100%;
     background-color: #F8F8F8;
 }
 .sectionServis{ 
